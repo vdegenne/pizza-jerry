@@ -6,6 +6,7 @@ services:
 addons:
   postgresql: "9.6"
 before_script:
+  - mkdir ./config
   - cp ./database.yml.travis ./config/database.yml
   - psql -U testdbuser -a -f sql/install.sql
 after_script:
