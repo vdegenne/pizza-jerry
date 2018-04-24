@@ -7,6 +7,7 @@ addons:
   postgresql: "9.6"
 before_script:
   - psql -c "create user testdbuser with password 'password'"
-  - psql -U testdbuser -a -f sql/install.sql
+  - psql -c "create database testdbuser owner testdbuser"
+  - yarn install:database -U testdbuser
 after_script:
-  - psql -U testdbuser -a -f sql/uninstall.sql
+  - yarn uninstall:database -U testdbuser
