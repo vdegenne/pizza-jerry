@@ -1,0 +1,13 @@
+import {Model} from 'objection';
+import database from '../database';
+
+
+export class Cream extends Model {
+  static async count() {
+    const count: any = await this.query().count();
+    return parseInt(count[0].count);
+  }
+}
+
+
+Model.knex(database);
