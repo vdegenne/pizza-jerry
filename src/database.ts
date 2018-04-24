@@ -7,7 +7,8 @@ switch (process.env.NODE_ENV) {
     dburl = 'postgres://testdbuser:password@localhost:5432/pizzajerry';
     break;
   case 'prod':
-  // rewrite dburl if the credentials are different for production
+    // rewrite dburl if the credentials are different for production
+    break;
   default:
     throw new Error('NODE_ENV not recognized.');
 }
