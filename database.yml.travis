@@ -4,4 +4,3 @@ test:
   username: testdbuser
   password: password
   encoding: utf8
-
