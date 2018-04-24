@@ -6,6 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node build/pizza-jerry",
+    "install:database": "psql -U testdbuser -a -f sql/install.sql",
+    "uninstall:database": "psql -U testdbuser -a -f sql/uninstall.sql",
     "clean": "rimraf build",
     "build": "yarn clean && tsc",
     "test": "NODE_ENV=test yarn build && mocha",
