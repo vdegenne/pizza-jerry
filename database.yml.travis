@@ -1,6 +1,0 @@
-test:
-  adapter: postgresql
-  database: pizzajerry
-  username: testdbuser
-  password: password
-  encoding: utf8
