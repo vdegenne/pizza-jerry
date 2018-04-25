@@ -1,16 +1,16 @@
 import * as Knex from 'knex';
+import {NODE_ENV} from './config';
 
 let dburl;
 
-switch (process.env.NODE_ENV) {
+switch (NODE_ENV) {
+  case 'dev':
   case 'test':
     dburl = 'postgres://testdbuser:password@localhost:5432/pizzajerry';
     break;
   case 'prod':
     // rewrite dburl if the credentials are different for production
     break;
-  default:
-    throw new Error('NODE_ENV not recognized.');
 }
 
 

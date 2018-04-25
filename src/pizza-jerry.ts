@@ -2,6 +2,8 @@ import * as commandLineArgs from 'command-line-args';
 import api from './api';
 import * as http from 'http';
 
+
+
 // we get the port option
 const portOption: commandLineArgs.OptionDefinition = {
   name: 'port',
@@ -14,4 +16,5 @@ const port = commandLineArgs([portOption]).port;
 
 // create server and listen to
 const server = http.createServer(api);
+
 server.listen(port, () => console.log(`Listening on ${port}`));

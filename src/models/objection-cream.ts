@@ -9,5 +9,7 @@ export class Cream extends Model {
   }
 }
 
+export {RelationMappings} from 'objection';
 
+// config
 Model.knex(database);

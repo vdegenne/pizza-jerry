@@ -1,5 +1,5 @@
 import * as express from 'express';
-import {exampleRouter} from './example.router';
+import {customerRouter} from './customer.router';
 
 const api: express.Express = express();
 
@@ -11,7 +11,7 @@ if (!(process.env.NODE_ENV && process.env.NODE_ENV === 'test')) {
 api.use(express.json());
 
 // routers
-api.use('/examples', exampleRouter);
+api.use('/customers', customerRouter);
 
 
 export default api;

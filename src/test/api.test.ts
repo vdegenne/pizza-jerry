@@ -7,10 +7,10 @@ import {Response} from 'superagent';
 const expect = chai.expect;
 
 
-suite('ExampleEndPoint', () => {
-  test('returns hello world', async() => {
-    await supertest(api).get('/examples/hello').expect((res: Response) => {
-      expect(JSON.parse(res.text).message).to.equal('hello world');
+suite('Customer', () => {
+  test('returns a customer with a favorite pizza', async() => {
+    await supertest(api).get('/customers/1').expect((res: Response) => {
+      expect(JSON.parse(res.text).favoritePizza.name).to.equal('jerrycheese');
     });
   });
 });
