@@ -1,4 +1,14 @@
+import {readFileSync as read} from 'fs';
 import database from '../database';
+
+// renew the database
+beforeEach((done) => {
+  const sql = ['destructure', 'structure', 'data']
+                  .map(f => read(`${__dirname}/../../sql/${f}.sql`).toString())
+                  .join('');
+
+  database.raw(sql).then(() => done()).catch(err => done(err));
+});
 
 
 // after all

@@ -13,4 +13,10 @@ suite('Customer', () => {
       expect(JSON.parse(res.text).favoritePizza.name).to.equal('jerrycheese');
     });
   });
+
+  test('returns 404 if no customer', async() => {
+    await supertest(api).get('/customers/2').expect((res: Response) => {
+      expect(res.status).to.equal(404);
+    });
+  });
 });

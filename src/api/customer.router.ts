@@ -11,9 +11,16 @@ router.get('/:customerId', async(req, res) => {
 
   switch (typeof req.params.customerId) {
     case 'number':
-      res.json((await Customer.query()
-                    .where('id', req.params.customerId)
-                    .eager('favoritePizza'))[0]);
+
+      const customer = (await Customer.query()
+                            .where('id', req.params.customerId)
+                            .eager('favoritePizza'))[0];
+
+      if (customer) {
+        res.json(customer);
+      } else {
+        res.status(404).end();
+      }
       return;
     case 'string':
     default:
