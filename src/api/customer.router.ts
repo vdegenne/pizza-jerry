@@ -31,4 +31,5 @@ router.get('/:customerId', async(req, res) => {
 
 });
 
+
 export {router as customerRouter};

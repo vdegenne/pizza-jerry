@@ -1,13 +1,13 @@
 {
   "name": "pizza-jerry",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "description",
   "author": "author",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "scripts": {
     "start": "node build/pizza-jerry",
-    "install:database": "psql -U testdbuser -a -f sql/install.sql",
-    "uninstall:database": "psql -U testdbuser -a -f sql/uninstall.sql",
+    "install:database": "psql -h localhost -U postgres -a -f sql/install.sql",
+    "uninstall:database": "psql -h localhost -U postgres -a -f sql/uninstall.sql",
     "clean": "rimraf build",
     "build": "yarn clean && tsc",
     "test": "NODE_ENV=test yarn build && mocha",
